@@ -1,3 +1,6 @@
+#if !defined(__wasm_simd128__) || !defined(__wasilibc_simd_string)
+// The SIMD implementation is in memmem_simd.c
+
 #include <string.h>
 #include <stdint.h>
 
@@ -152,3 +155,5 @@ char *strstr(const char *h, const char *n)
 
 	return twoway_strstr((void *)h, (void *)n);
 }
+
+#endif
